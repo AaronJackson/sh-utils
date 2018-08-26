@@ -1,0 +1,15 @@
+#!/bin/bash
+
+mkdir -p ~/public_html/private/o/
+
+fname=$(cat /dev/urandom | tr -cd 'a-f0-9' | head -c 32)
+
+cat > ~/public_html/private/o/$fname.txt
+
+link="https://aaronsplace.co.uk/private/o/$fname.txt"
+
+echo "$link"
+echo "$link" | xclip -selection c
+
+(cd ~/public_html/ && make public)
+
