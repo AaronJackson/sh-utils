@@ -1,0 +1,19 @@
+#!/usr/bin/bash
+
+cmd="nc bach.nat.rhwyd.co.uk 30001"
+
+case $1 in
+    tv)
+	echo "Main.Source=Coax1" | $cmd
+	;;
+    pi)
+	echo "Main.Source=Opt1" | $cmd
+	;;
+    vinyl)
+	echo "Main.Source=Phono" | $cmd
+	;;
+    cd)
+	echo "Main.Source=TV" | $cmd
+	;;
+esac
+
