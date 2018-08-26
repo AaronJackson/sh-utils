@@ -1,0 +1,15 @@
+#!/bin/bash
+
+sink=`pactl list sinks short | grep pci | awk '{ print $1 }'`
+
+case "$1" in
+    up)
+	pactl set-sink-volume $sink +10%
+	;;
+    down)
+	pactl set-sink-volume $sink -10%
+	;;
+    mute)
+	pactl set-sink-mute $sink toggle
+	;;
+esac
