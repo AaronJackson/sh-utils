@@ -1,0 +1,12 @@
+#!/bin/sh
+TOGGLE=$HOME/.display_toggle
+
+if [ ! -e $TOGGLE ]; then
+    touch $TOGGLE
+    xrandr --output eDP1 --mode 1920x1080
+    xrandr --output HDMI1 --off
+else
+    rm $TOGGLE
+    xrandr --output eDP1 --off
+    xrandr --output HDMI1 --mode 1600x900
+fi

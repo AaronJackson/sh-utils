@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+
+xrandr --output VGA1 --auto --left-of LVDS1
+xrandr --output LVDS1 --auto --right-of VGA1
+
