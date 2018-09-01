@@ -9,11 +9,20 @@ case $1 in
     pi)
 	echo "Main.Source=Opt1" | $cmd
 	;;
-    vinyl)
+    phono)
 	echo "Main.Source=Phono" | $cmd
 	;;
     cd)
 	echo "Main.Source=TV" | $cmd
+	;;
+    radio)
+	echo "Main.Source=Opt2" | $cmd
+	;;
+    off)
+	echo "Main.Power=Off" | $cmd
+	;;
+    on)
+	echo "Main.Power=On" | $cmd
 	;;
 esac
 
